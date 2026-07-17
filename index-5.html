@@ -237,6 +237,18 @@ nav .nav-links a:hover{ opacity:1; color:var(--teal); }
   opacity:0.22;
   mix-blend-mode:screen;
 }
+.hero-ambient .gif-layer{
+  opacity:0.55;
+  mix-blend-mode:screen;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.55) 75%, rgba(10,10,10,0.85) 100%);
+  pointer-events:none;
+}
 @media (prefers-reduced-motion: reduce){
   .ambient-bg .blob, .ambient-bg .scan{ animation:none !important; }
   .ambient-bg .gif-layer{ display:none; }
@@ -786,10 +798,7 @@ footer{
 </nav>
 
 <header class="hero">
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="blob blob-red"></div>
-    <div class="blob blob-teal"></div>
-    <div class="scan"></div>
+  <div class="ambient-bg hero-ambient" aria-hidden="true">
     <div class="gif-layer"></div>
   </div>
   <div class="max">
